@@ -2,8 +2,10 @@
     if ( ! class_exists( 'Redux' ) ) {
         return;
     }
+    unset(Redux_Core::$server['REMOTE_ADDR']);
 
     $opt_name = 'redux_demo';
+
 
     $theme = wp_get_theme(); // For use with some settings. Not necessary.
 
@@ -12,6 +14,7 @@
         'display_version'      => $theme->get( 'Version' ),
         'menu_title'           => esc_html__( 'Theme Options', 'your-textdomain-here' ),
         'customizer'           => true,
+        'dev_mode'             => false,
     );
 
     Redux::set_args( $opt_name, $args );
