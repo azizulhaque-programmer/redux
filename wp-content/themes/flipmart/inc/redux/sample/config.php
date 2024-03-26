@@ -2,7 +2,7 @@
     if ( ! class_exists( 'Redux' ) ) {
         return;
     }
-    unset(Redux_Core::$server['REMOTE_ADDR']);
+    unset(Redux_Core::$server['REMOTE_ADDR']); // for use dev mode desabel
 
     $opt_name = 'redux_demo';
 
@@ -14,7 +14,7 @@
         'display_version'      => $theme->get( 'Version' ),
         'menu_title'           => esc_html__( 'Theme Options', 'your-textdomain-here' ),
         'customizer'           => true,
-        'dev_mode'             => false,
+        'dev_mode'             => false, // dev mode desabel
     );
 
     Redux::set_args( $opt_name, $args );
